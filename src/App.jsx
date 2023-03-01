@@ -1,9 +1,9 @@
+import RenderField from './renderField';
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        
-      </header>
+      <RenderField/>
     </div>
   );
 }

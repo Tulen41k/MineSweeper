@@ -1,0 +1,17 @@
+.field {
+
+    display: flex;
+    flex-direction: column;
+
+    .alignY {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .alignX {
+        width: 24px;
+        height: 24px;
+        margin: 1px;
+        background: #BEB;
+    }
+}
