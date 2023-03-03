@@ -7,7 +7,7 @@ import { Mask } from './renderField';
 
 function CheckWinField( mask ) {
     let state = mask.reduce(function(state, current, i, mask){
-        if ((field[i] != mine && current === Mask.Transparent) && 
+        if ((field[i] != mine && current === Mask.Transparent) || 
             (field[i] === mine && (current === Mask.Fill || current === Mask.Flag || current === Mask.Question )))
             return true;
         else 

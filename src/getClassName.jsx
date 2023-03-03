@@ -65,6 +65,9 @@ function GetClassName ( x, y, mask ) {
                 break;
         }
     }
+
+    
+    return name;
   }
   
   export default GetClassName;

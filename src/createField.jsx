@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 export const mine = -1;
-export const mineCount = 3;
+export const mineCount = 40;
 export const notMine = -2;
 export const failMine = -3;
-export const size = 5;
+export const size = 16;
 export const field = new Array(size*size).fill(0);
 export let mineMap = [[]];
 

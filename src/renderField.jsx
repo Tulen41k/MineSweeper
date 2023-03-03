@@ -34,7 +34,7 @@ function RenderField(X, Y) {
                     <div key={y} className='alignY'>
                         {dimension.map((_,x) => {
                             return (
-                                <div key={x} className={GetClassName(x, y, mask) }
+                                <button key={x} className={GetClassName(x, y, mask)} 
                                 onClick={() => {
                                     console.log(GetClassName(x, y, mask));
                                     console.log(field);
@@ -71,7 +71,7 @@ function RenderField(X, Y) {
                                     setMask((prev) => [...prev]);
                                 })}
                                 >
-                                </div>
+                                </button>
                             );
                         })}
                     </div>

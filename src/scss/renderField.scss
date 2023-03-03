@@ -11,82 +11,82 @@
     %alignX {
         width: 16px;
         height: 16px;
-        margin: 1px;
         background-image: url(../ikon/picture.png);
+        border: none;
     }
 
     .one {
         @extend %alignX;
-        background-position: 68px 0 px;
+        background-position: 0px -68px;
     }
 
     .two {
         @extend %alignX;
-        background-position: 68px 17 px;
+        background-position: -17px -68px;
     }
 
     .three {
         @extend %alignX;
-        background-position: 68px 34 px;
+        background-position: -34px -68px;
     }
 
     .four {
         @extend %alignX;
-        background-position: 68px 51 px;
+        background-position: -51px  -68px;
     }
 
     .five {
         @extend %alignX;
-        background-position: 68px 68 px;
+        background-position: -68px  -68px;
     }
 
     .six {
         @extend %alignX;
-        background-position: 68px 85 px;
+        background-position: -85px  -68px;
     }
 
     .seven {
         @extend %alignX;
-        background-position: 68px 102 px;
+        background-position: -102px  -68px;
     }
 
     .eight {
         @extend %alignX;
-        background-position: 68px 119 px;
+        background-position: -119px  -68px;
     }
 
     .fill {
         @extend %alignX;
-        background-position: 51px 0 px;
+        background-position: 0px  -51px;
     }
 
     .zero {
         @extend %alignX;
-        background-position: 51px 17 px;
+        background-position: -17px  -51px;
     }
 
     .flag {
         @extend %alignX;
-        background-position: 51px 34 px;
+        background-position: -34px  -51px;
     }
 
     .question {
         @extend %alignX;
-        background-position: 51px 51 px;
+        background-position: -51px -51px;
     }
 
     .mine {
         @extend %alignX;
-        background-position: 51px 85 px;
+        background-position: -85px  -51px;
     }
 
-    .failMine {
+    .fail {
         @extend %alignX;
-        background-position: 51px 102 px;
+        background-position: -102px  -51px;
     }
 
     .notMine {
         @extend %alignX;
-        background-position: 51px 119 px;
+        background-position: -119px  -51px;
     }
 }

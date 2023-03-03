@@ -16,54 +16,54 @@
       -ms-flex-direction: row;
           flex-direction: row;
 }
-.field .notMine, .field .failMine, .field .mine, .field .question, .field .flag, .field .zero, .field .fill, .field .eight, .field .seven, .field .six, .field .five, .field .four, .field .three, .field .two, .field .one {
+.field .notMine, .field .fail, .field .mine, .field .question, .field .flag, .field .zero, .field .fill, .field .eight, .field .seven, .field .six, .field .five, .field .four, .field .three, .field .two, .field .one {
   width: 16px;
   height: 16px;
-  margin: 1px;
   background-image: url(../ikon/picture.png);
+  border: none;
 }
 .field .one {
-  background-position: 68px 0 px;
+  background-position: 0px -68px;
 }
 .field .two {
-  background-position: 68px 17 px;
+  background-position: -17px -68px;
 }
 .field .three {
-  background-position: 68px 34 px;
+  background-position: -34px -68px;
 }
 .field .four {
-  background-position: 68px 51 px;
+  background-position: -51px -68px;
 }
 .field .five {
-  background-position: 68px 68 px;
+  background-position: -68px -68px;
 }
 .field .six {
-  background-position: 68px 85 px;
+  background-position: -85px -68px;
 }
 .field .seven {
-  background-position: 68px 102 px;
+  background-position: -102px -68px;
 }
 .field .eight {
-  background-position: 68px 119 px;
+  background-position: -119px -68px;
 }
 .field .fill {
-  background-position: 51px 0 px;
+  background-position: 0px -51px;
 }
 .field .zero {
-  background-position: 51px 17 px;
+  background-position: -17px -51px;
 }
 .field .flag {
-  background-position: 51px 34 px;
+  background-position: -34px -51px;
 }
 .field .question {
-  background-position: 51px 51 px;
+  background-position: -51px -51px;
 }
 .field .mine {
-  background-position: 51px 85 px;
+  background-position: -85px -51px;
 }
-.field .failMine {
-  background-position: 51px 102 px;
+.field .fail {
+  background-position: -102px -51px;
 }
 .field .notMine {
-  background-position: 51px 119 px;
+  background-position: -119px -51px;
 }
