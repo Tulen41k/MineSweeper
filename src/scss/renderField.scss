@@ -8,10 +8,85 @@
         flex-direction: row;
     }
 
-    .alignX {
-        width: 24px;
-        height: 24px;
+    %alignX {
+        width: 16px;
+        height: 16px;
         margin: 1px;
-        background: #BEB;
+        background-image: url(../ikon/picture.png);
+    }
+
+    .one {
+        @extend %alignX;
+        background-position: 68px 0 px;
+    }
+
+    .two {
+        @extend %alignX;
+        background-position: 68px 17 px;
+    }
+
+    .three {
+        @extend %alignX;
+        background-position: 68px 34 px;
+    }
+
+    .four {
+        @extend %alignX;
+        background-position: 68px 51 px;
+    }
+
+    .five {
+        @extend %alignX;
+        background-position: 68px 68 px;
+    }
+
+    .six {
+        @extend %alignX;
+        background-position: 68px 85 px;
+    }
+
+    .seven {
+        @extend %alignX;
+        background-position: 68px 102 px;
+    }
+
+    .eight {
+        @extend %alignX;
+        background-position: 68px 119 px;
+    }
+
+    .fill {
+        @extend %alignX;
+        background-position: 51px 0 px;
+    }
+
+    .zero {
+        @extend %alignX;
+        background-position: 51px 17 px;
+    }
+
+    .flag {
+        @extend %alignX;
+        background-position: 51px 34 px;
+    }
+
+    .question {
+        @extend %alignX;
+        background-position: 51px 51 px;
+    }
+
+    .mine {
+        @extend %alignX;
+        background-position: 51px 85 px;
+    }
+
+    .failMine {
+        @extend %alignX;
+        background-position: 51px 102 px;
+    }
+
+    .notMine {
+        @extend %alignX;
+        background-position: 51px 119 px;
     }
 }
