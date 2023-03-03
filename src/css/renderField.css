@@ -1,4 +1,4 @@
-.field {
+.game {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6,8 +6,35 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  background-color: rgb(160, 159, 159);
+  width: 276px;
+  height: 320px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-.field .alignY {
+.game .gameHead {
+  padding: 4px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: rgb(187, 187, 187);
+  width: 248px;
+}
+.game .gameHead .click, .game .gameHead .wait, .game .gameHead .loss, .game .gameHead .win, .game .gameHead .progress {
+  width: 26px;
+  height: 26px;
+  background-image: url(../ikon/picture.png);
+  margin: auto;
+}
+.game .gameHead .mineCount,
+.game .gameHead .timer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -16,54 +43,142 @@
       -ms-flex-direction: row;
           flex-direction: row;
 }
-.field .notMine, .field .fail, .field .mine, .field .question, .field .flag, .field .zero, .field .fill, .field .eight, .field .seven, .field .six, .field .five, .field .four, .field .three, .field .two, .field .one {
+.game .gameHead .mineCount .nine, .game .gameHead .mineCount .eight, .game .gameHead .mineCount .seven, .game .gameHead .mineCount .six, .game .gameHead .mineCount .five, .game .gameHead .mineCount .four, .game .gameHead .mineCount .three, .game .gameHead .mineCount .two, .game .gameHead .mineCount .one, .game .gameHead .mineCount .zero,
+.game .gameHead .timer .nine,
+.game .gameHead .timer .eight,
+.game .gameHead .timer .seven,
+.game .gameHead .timer .six,
+.game .gameHead .timer .five,
+.game .gameHead .timer .four,
+.game .gameHead .timer .three,
+.game .gameHead .timer .two,
+.game .gameHead .timer .one,
+.game .gameHead .timer .zero {
+  width: 13px;
+  height: 23px;
+  background-image: url(../ikon/picture.png);
+}
+.game .gameHead .mineCount .zero,
+.game .gameHead .timer .zero {
+  background-position: -126px 0px;
+}
+.game .gameHead .mineCount .one,
+.game .gameHead .timer .one {
+  background-position: 0px 0px;
+}
+.game .gameHead .mineCount .two,
+.game .gameHead .timer .two {
+  background-position: -14px 0px;
+}
+.game .gameHead .mineCount .three,
+.game .gameHead .timer .three {
+  background-position: -28px 0px;
+}
+.game .gameHead .mineCount .four,
+.game .gameHead .timer .four {
+  background-position: -42px 0px;
+}
+.game .gameHead .mineCount .five,
+.game .gameHead .timer .five {
+  background-position: -56px 0px;
+}
+.game .gameHead .mineCount .six,
+.game .gameHead .timer .six {
+  background-position: -70px 0px;
+}
+.game .gameHead .mineCount .seven,
+.game .gameHead .timer .seven {
+  background-position: -84px 0px;
+}
+.game .gameHead .mineCount .eight,
+.game .gameHead .timer .eight {
+  background-position: -98px 0px;
+}
+.game .gameHead .mineCount .nine,
+.game .gameHead .timer .nine {
+  background-position: -112px 0px;
+}
+.game .gameHead .progress {
+  background-position: 0px -24px;
+}
+.game .gameHead .win {
+  background-position: -81px -24px;
+}
+.game .gameHead .loss {
+  background-position: -108px -24px;
+}
+.game .gameHead .wait {
+  background-position: -54px -24px;
+}
+.game .gameHead .click {
+  background-position: -27px -24px;
+}
+.game .field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.game .field .alignY {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.game .field .notMine, .game .field .failMine, .game .field .mine, .game .field .question, .game .field .flag, .game .field .zero, .game .field .fill, .game .field .eight, .game .field .seven, .game .field .six, .game .field .five, .game .field .four, .game .field .three, .game .field .two, .game .field .one {
   width: 16px;
   height: 16px;
   background-image: url(../ikon/picture.png);
   border: none;
 }
-.field .one {
+.game .field .one {
   background-position: 0px -68px;
 }
-.field .two {
+.game .field .two {
   background-position: -17px -68px;
 }
-.field .three {
+.game .field .three {
   background-position: -34px -68px;
 }
-.field .four {
+.game .field .four {
   background-position: -51px -68px;
 }
-.field .five {
+.game .field .five {
   background-position: -68px -68px;
 }
-.field .six {
+.game .field .six {
   background-position: -85px -68px;
 }
-.field .seven {
+.game .field .seven {
   background-position: -102px -68px;
 }
-.field .eight {
+.game .field .eight {
   background-position: -119px -68px;
 }
-.field .fill {
+.game .field .fill {
   background-position: 0px -51px;
 }
-.field .zero {
+.game .field .zero {
   background-position: -17px -51px;
 }
-.field .flag {
+.game .field .flag {
   background-position: -34px -51px;
 }
-.field .question {
+.game .field .question {
   background-position: -51px -51px;
 }
-.field .mine {
+.game .field .mine {
   background-position: -85px -51px;
 }
-.field .fail {
+.game .field .failMine {
   background-position: -102px -51px;
 }
-.field .notMine {
+.game .field .notMine {
   background-position: -119px -51px;
 }

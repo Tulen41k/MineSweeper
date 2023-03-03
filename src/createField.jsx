@@ -44,8 +44,6 @@ function CreateField( notMineX, notMineY) {
 
         rise (x, y);
     }
-
-    console.log(field);
     return;
   }
   

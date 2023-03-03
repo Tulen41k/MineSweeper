@@ -22,11 +22,24 @@ function rise (x, y, newMask) {
     return newMask;
 }
 
+function checkFlag (newMask) {
+    for ( let i = 0; i < newMask.length; i ++) {
+        if ((newMask[i] === Mask.Flag || newMask[i] === Mask.Question) && field[i] != mine) {
+            newMask[i] = Mask.Transparent;
+            field[i] = notMine;
+        }
+    }
+
+    return newMask;
+}
+
 function loss (newMask) {
     while (mineMap.length) {
         const [x, y] = mineMap.pop();
         newMask[y * size + x] = Mask.Transparent;
     }
+
+    newMask = checkFlag(newMask);
 
     return newMask;
 }
@@ -35,6 +48,7 @@ function OpenField(x, y, mask) {
     let newMask = mask.slice();
 
     if (field[y * size + x] === mine){
+        field[y * size + x] = failMine;
         newMask = loss(newMask);
     }
     else {
