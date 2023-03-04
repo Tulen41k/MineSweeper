@@ -1,0 +1,32 @@
+{
+    "root": true,
+    "plugins": ["react", "import", "react-hooks"],
+    "rules": {
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
+        "no-plusplus": 0,
+        "no-continue": 0,
+        "no-shadow": 0,
+        "max-len": 0
+    },
+
+    "parserOptions": {
+        "sourceType": "module"
+    },
+
+    "extends":  ["airbnb-base", "react-app"],
+    "env": {
+        "node": true,
+        "es6": true,
+        "browser": true
+    },
+
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".jsx"],
+                "moduleDirectory": ["node_modules", "src/"]
+            }
+        }
+    }
+}
