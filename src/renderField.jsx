@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import CreateField, {
   field, size, mine, mineCount,
 } from './createField';
@@ -33,6 +33,41 @@ function RenderField(X, Y) {
   const [gameStatus, setGameStatus] = useState(Status.Process);
   const [mask, setMask] = useState(() => new Array(size * size).fill(Mask.Fill));
 
+  const handleClick = useCallback((x, y) => {
+    if (flag === false) {
+      CreateField(x, y);
+      flag = true;
+    }
+    if (mask[y * size + x] === Mask.Transparent || gameStatus === Status.Loss) return;
+    if (field[y * size + x] === mine) setGameStatus(Status.Loss);
+    const maskNew = OpenField(x, y, mask);
+    setMask(maskNew);
+    if (CheckWinField(mask)) setGameStatus(Status.Win);
+  }, []);
+
+  const handleRightClick = useCallback((e, x, y) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    switch (mask[y * size + x]) {
+      case Mask.Fill:
+        mask[y * size + x] = Mask.Flag;
+        flagMine -= 1;
+        break;
+      case Mask.Flag:
+        mask[y * size + x] = Mask.Question;
+        flagMine += 1;
+        break;
+      case Mask.Question:
+        mask[y * size + x] = Mask.Fill;
+        break;
+      default:
+        break;
+    }
+
+    setMask((prev) => [...prev]);
+  }, []);
+
   return (
         <div className='game'>
             <div className='gameHead'>
@@ -62,39 +97,8 @@ function RenderField(X, Y) {
                                     <button key={x} className={GetClassName(x, y, mask)}
                                     onMouseDown = {() => { setGameStatus(Status.Wait); }}
                                     onMouseUp = {() => (setGameStatus(Status.Process))}
-                                    onClick={() => {
-                                      if (flag === false) {
-                                        CreateField(x, y);
-                                        flag = true;
-                                      }
-                                      if (mask[y * size + x] === Mask.Transparent || gameStatus === Status.Loss) return;
-                                      if (field[y * size + x] === mine) setGameStatus(Status.Loss);
-                                      const maskNew = OpenField(x, y, mask);
-                                      setMask(maskNew);
-                                      if (CheckWinField(mask)) setGameStatus(Status.Win);
-                                    }}
-                                    onContextMenu={((e) => {
-                                      e.preventDefault();
-                                      e.stopPropagation();
-
-                                      switch (mask[y * size + x]) {
-                                        case Mask.Fill:
-                                          mask[y * size + x] = Mask.Flag;
-                                          flagMine -= 1;
-                                          break;
-                                        case Mask.Flag:
-                                          mask[y * size + x] = Mask.Question;
-                                          flagMine += 1;
-                                          break;
-                                        case Mask.Question:
-                                          mask[y * size + x] = Mask.Fill;
-                                          break;
-                                        default:
-                                          break;
-                                      }
-
-                                      setMask((prev) => [...prev]);
-                                    })}
+                                    onClick={() => handleClick(x, y)}
+                                    onContextMenu={(e) => handleRightClick(e, x, y)}
                                     >
                                     </button>
                             ))}
