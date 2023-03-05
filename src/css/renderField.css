@@ -1,3 +1,10 @@
+.game .field, .game .gameHead {
+  border-top: 3px solid gray;
+  border-left: 3px solid gray;
+  border-right: 3px solid rgb(226, 226, 226);
+  border-bottom: 3px solid rgb(226, 226, 226);
+}
+
 .game {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -14,6 +21,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-top: 3px solid rgb(226, 226, 226);
+  border-left: 3px solid rgb(226, 226, 226);
+  border-right: 3px solid gray;
+  border-bottom: 3px solid gray;
 }
 .game .gameHead {
   padding: 4px;

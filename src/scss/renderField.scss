@@ -1,206 +1,220 @@
+%border {
+
+  border-top: 3px solid gray;
+  border-left: 3px solid gray;
+  border-right: 3px solid rgb(226, 226, 226);
+  border-bottom: 3px solid rgb(226, 226, 226);
+}
+
 .game {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(160, 159, 159);
+  width: 276px;
+  height: 320px;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 3px solid rgb(226, 226, 226);
+  border-left: 3px solid rgb(226, 226, 226);
+  border-right: 3px solid gray;
+  border-bottom: 3px solid gray;
+
+  .gameHead {
+    padding: 4px;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(187, 187, 187);
+    width: 248px;
+    @extend %border;
+
+    %status {
+      width: 26px;
+      height: 26px;
+      background-image: url(../ikon/picture.png);
+      margin: auto;
+    }
+
+    .mineCount,
+    .timer {
+      display: flex;
+      flex-direction: row;
+
+      %count {
+        width: 13px;
+        height: 23px;
+        background-image: url(../ikon/picture.png);
+      }
+
+      .zero {
+        @extend %count;
+        background-position: -126px 0px;
+      }
+
+      .one {
+        @extend %count;
+        background-position: 0px 0px;
+      }
+
+      .two {
+        @extend %count;
+        background-position: -14px 0px;
+      }
+
+      .three {
+        @extend %count;
+        background-position: -28px 0px;
+      }
+
+      .four {
+        @extend %count;
+        background-position: -42px 0px;
+      }
+
+      .five {
+        @extend %count;
+        background-position: -56px 0px;
+      }
+
+      .six {
+        @extend %count;
+        background-position: -70px 0px;
+      }
+
+      .seven {
+        @extend %count;
+        background-position: -84px 0px;
+      }
+
+      .eight {
+        @extend %count;
+        background-position: -98px 0px;
+      }
+
+      .nine {
+        @extend %count;
+        background-position: -112px 0px;
+      }
+    }
+
+    .progress {
+      @extend %status;
+      background-position: 0px -24px;
+    }
+
+    .win {
+      @extend %status;
+      background-position: -81px -24px;
+    }
+
+    .loss {
+      @extend %status;
+      background-position: -108px -24px;
+    }
+
+    .wait {
+      @extend %status;
+      background-position: -54px -24px;
+    }
+
+    .click {
+      @extend %status;
+      background-position: -27px -24px;
+    }
+  }
+
+  .field {
+
     display: flex;
     flex-direction: column;
-    background-color: rgb(160, 159, 159);
-    width: 276px;
-    height: 320px;
-    justify-content: space-around;
-    align-items: center;
+    @extend %border;
 
-    .gameHead {
-        padding: 4px;
-        display: flex;
-        flex-direction: row;
-        background-color: rgb(187, 187, 187);
-        width: 248px;
-
-        %status {
-            width: 26px;
-            height: 26px;
-            background-image: url(../ikon/picture.png);
-            margin: auto;
-        }
-
-        .mineCount,
-        .timer {
-            display: flex;
-            flex-direction: row;
-
-            %count {
-                width: 13px;
-                height: 23px;
-                background-image: url(../ikon/picture.png);
-            }
-
-            .zero {
-                @extend %count;
-                background-position: -126px 0px;
-            }
-
-            .one {
-                @extend %count;
-                background-position: 0px 0px;
-            }
-
-            .two {
-                @extend %count;
-                background-position: -14px 0px;
-            }
-
-            .three {
-                @extend %count;
-                background-position: -28px 0px;
-            }
-
-            .four {
-                @extend %count;
-                background-position: -42px 0px;
-            }
-
-            .five {
-                @extend %count;
-                background-position: -56px 0px;
-            }
-
-            .six {
-                @extend %count;
-                background-position: -70px 0px;
-            }
-
-            .seven {
-                @extend %count;
-                background-position: -84px 0px;
-            }
-
-            .eight {
-                @extend %count;
-                background-position: -98px 0px;
-            }
-
-            .nine {
-                @extend %count;
-                background-position: -112px 0px;
-            }
-        }
-
-        .progress {
-            @extend %status;
-            background-position: 0px -24px;
-        }
-
-        .win {
-            @extend %status;
-            background-position: -81px -24px;
-        }
-
-        .loss {
-            @extend %status;
-            background-position: -108px -24px;
-        }
-
-        .wait {
-            @extend %status;
-            background-position: -54px -24px;
-        }
-
-        .click {
-            @extend %status;
-            background-position: -27px -24px;
-        }
+    .alignY {
+      display: flex;
+      flex-direction: row;
     }
 
-    .field {
-
-        display: flex;
-        flex-direction: column;
-    
-        .alignY {
-            display: flex;
-            flex-direction: row;
-        }
-    
-        %alignX {
-            width: 16px;
-            height: 16px;
-            background-image: url(../ikon/picture.png);
-            border: none;
-        }
-    
-        .one {
-            @extend %alignX;
-            background-position: 0px -68px;
-        }
-    
-        .two {
-            @extend %alignX;
-            background-position: -17px -68px;
-        }
-    
-        .three {
-            @extend %alignX;
-            background-position: -34px -68px;
-        }
-    
-        .four {
-            @extend %alignX;
-            background-position: -51px  -68px;
-        }
-    
-        .five {
-            @extend %alignX;
-            background-position: -68px  -68px;
-        }
-    
-        .six {
-            @extend %alignX;
-            background-position: -85px  -68px;
-        }
-    
-        .seven {
-            @extend %alignX;
-            background-position: -102px  -68px;
-        }
-    
-        .eight {
-            @extend %alignX;
-            background-position: -119px  -68px;
-        }
-    
-        .fill {
-            @extend %alignX;
-            background-position: 0px  -51px;
-        }
-    
-        .zero {
-            @extend %alignX;
-            background-position: -17px  -51px;
-        }
-    
-        .flag {
-            @extend %alignX;
-            background-position: -34px  -51px;
-        }
-    
-        .question {
-            @extend %alignX;
-            background-position: -51px -51px;
-        }
-    
-        .mine {
-            @extend %alignX;
-            background-position: -85px  -51px;
-        }
-    
-        .failMine {
-            @extend %alignX;
-            background-position: -102px  -51px;
-        }
-    
-        .notMine {
-            @extend %alignX;
-            background-position: -119px  -51px;
-        }
+    %alignX {
+      width: 16px;
+      height: 16px;
+      background-image: url(../ikon/picture.png);
+      border: none;
     }
+
+    .one {
+      @extend %alignX;
+      background-position: 0px -68px;
+    }
+
+    .two {
+      @extend %alignX;
+      background-position: -17px -68px;
+    }
+
+    .three {
+      @extend %alignX;
+      background-position: -34px -68px;
+    }
+
+    .four {
+      @extend %alignX;
+      background-position: -51px  -68px;
+    }
+
+    .five {
+      @extend %alignX;
+      background-position: -68px  -68px;
+    }
+
+    .six {
+      @extend %alignX;
+      background-position: -85px  -68px;
+    }
+
+    .seven {
+      @extend %alignX;
+      background-position: -102px  -68px;
+    }
+
+    .eight {
+      @extend %alignX;
+      background-position: -119px  -68px;
+    }
+
+    .fill {
+      @extend %alignX;
+      background-position: 0px  -51px;
+    }
+
+    .zero {
+      @extend %alignX;
+      background-position: -17px  -51px;
+    }
+
+    .flag {
+      @extend %alignX;
+      background-position: -34px  -51px;
+    }
+
+    .question {
+      @extend %alignX;
+      background-position: -51px -51px;
+    }
+
+    .mine {
+      @extend %alignX;
+      background-position: -85px  -51px;
+    }
+
+    .failMine {
+      @extend %alignX;
+      background-position: -102px  -51px;
+    }
+
+    .notMine {
+      @extend %alignX;
+      background-position: -119px  -51px;
+    }
+  }
 
 }
 

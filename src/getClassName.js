@@ -1,11 +1,11 @@
 import {
-  field, size, mine, notMine, failMine,
+  failMine, field, mine, notMine, size,
 } from './createField';
-import { Mask } from './renderField';
+import { MaskType } from './stubs';
 
 function GetClassName(x, y, mask) {
   let name;
-  if (mask[y * size + x] === Mask.Transparent) {
+  if (mask[y * size + x] === MaskType.Transparent) {
     switch (field[y * size + x]) {
       case 0:
         name = 'zero';
@@ -48,13 +48,13 @@ function GetClassName(x, y, mask) {
     }
   } else {
     switch (mask[y * size + x]) {
-      case Mask.Fill:
+      case MaskType.Fill:
         name = 'fill';
         break;
-      case Mask.Flag:
+      case MaskType.Flag:
         name = 'flag';
         break;
-      case Mask.Question:
+      case MaskType.Question:
         name = 'question';
         break;
       default:
