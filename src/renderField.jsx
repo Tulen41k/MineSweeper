@@ -36,6 +36,12 @@ function RenderField() {
     }
   }, [intervalId, gameStatus]);
 
+  useEffect(() => {
+    if (time === 999) {
+      setGameStatus(Status.Loss);
+    }
+  }, [time, Status]);
+
   const handleClick = useCallback((x, y) => {
     if (gameStarted === false) {
       CreateField(x, y);
@@ -46,7 +52,7 @@ function RenderField() {
       );
       setIntervalId(IdInterval);
     }
-    if (mask[y * size + x] === MaskType.Transparent) return;
+    if (mask[y * size + x] === MaskType.Transparent || mask[y * size + x] === MaskType.Flag) return;
     if (field[y * size + x] === mine) setGameStatus(Status.Loss);
     const maskNew = OpenField(x, y, mask);
     setMask(maskNew);
@@ -60,8 +66,10 @@ function RenderField() {
 
     switch (mask[y * size + x]) {
       case MaskType.Fill:
-        mask[y * size + x] = MaskType.Flag;
-        setMine((prev) => (prev - 1));
+        if (flagMine > 0) {
+          mask[y * size + x] = MaskType.Flag;
+          setMine((prev) => (prev - 1));
+        }
         break;
       case MaskType.Flag:
         mask[y * size + x] = MaskType.Question;
@@ -75,7 +83,7 @@ function RenderField() {
     }
 
     setMask((prev) => [...prev]);
-  }, [mask, gameStatus]);
+  }, [mask, gameStatus, flagMine]);
 
   return (
         <div className='game'>
