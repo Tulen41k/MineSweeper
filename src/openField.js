@@ -19,6 +19,10 @@ function rise(x, y, newMask) {
   newMask = clear(x - 1, y, newMask);
   newMask = clear(x, y + 1, newMask);
   newMask = clear(x, y - 1, newMask);
+  newMask = clear(x + 1, y + 1, newMask);
+  newMask = clear(x + 1, y - 1, newMask);
+  newMask = clear(x - 1, y - 1, newMask);
+  newMask = clear(x - 1, y + 1, newMask);
   return newMask;
 }
 

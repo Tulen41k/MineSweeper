@@ -50,8 +50,8 @@ function RenderField() {
     if (field[y * size + x] === mine) setGameStatus(Status.Loss);
     const maskNew = OpenField(x, y, mask);
     setMask(maskNew);
-    if (CheckWinField(mask)) setGameStatus(Status.Win);
-  }, [gameStarted, gameStatus, mask]);
+    if (CheckWinField(maskNew)) setGameStatus(Status.Win);
+  }, [gameStarted, mask]);
 
   const handleRightClick = useCallback((e, x, y) => {
     e.preventDefault();
