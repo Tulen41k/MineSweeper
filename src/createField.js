@@ -1,8 +1,8 @@
 export const mine = -1;
-export const mineCount = 2;
+export const mineCount = 40;
 export const notMine = -2;
 export const failMine = -3;
-export const size = 5;
+export const size = 16;
 export const field = new Array(size * size).fill(0);
 export const mineMap = [[]];
 
