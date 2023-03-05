@@ -22,9 +22,9 @@ function RenderField(X, Y) {
       setMask(new Array(size * size).fill(MaskType.Fill));
       setTime(0);
       setMine(mineCount);
-    }
-    if (intervalId !== null) {
+      if (intervalId !== null) {
         clearInterval(intervalId);
+      }
     }
   }, [gameStarted, intervalId]);
 
