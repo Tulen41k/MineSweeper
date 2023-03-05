@@ -9,7 +9,7 @@ import GetClassName from './getClassName';
 import GetCountName from './getCountName';
 import { MaskType, Status } from './stubs';
 
-function RenderField(X, Y) {
+function RenderField() {
   const dimension = new Array(size).fill(null);
   const [gameStatus, setGameStatus] = useState(Status.Process);
   const [mask, setMask] = useState(() => new Array(size * size).fill(MaskType.Fill));
