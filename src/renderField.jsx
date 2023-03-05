@@ -23,7 +23,10 @@ function RenderField(X, Y) {
       setTime(0);
       setMine(mineCount);
     }
-  }, [gameStarted]);
+    if (intervalId !== null) {
+        clearInterval(intervalId);
+    }
+  }, [gameStarted, intervalId]);
 
   useEffect(() => {
     if (gameStatus === Status.Win || gameStatus === Status.Loss) {
